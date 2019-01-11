@@ -21,10 +21,22 @@ $sql = "SELECT * FROM products ";
         $this->query($sql);
         
 // Let assume this is the result from query 
-$arrResults = [["product_id" => 1, "product_name" => "Orange"],["product_id" => 2, "product_name" => "Tomato"]...];
+$arrProducts = [["product_id" => 1, "product_name" => "Orange"],["product_id" => 2, "product_name" => "Tomato"]...];
 ?>
 
-// Start pagination in here
+<!-- Display the products in this row -->
+<div class="row">
+        <ul class="products">
+                <?php
+                
+                foreach($arrProducts as $arrProduct){
+                        echo "<li>{$arrProduct['product_name']}</li>";
+                }
+                ?>
+        </ul>
+</div>
+
+<!-- Start pagination in here: you can put pagination at the bottom or top the products -->
 <div class="row">
     <ul class="pages">
 
